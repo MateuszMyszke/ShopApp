@@ -9,14 +9,13 @@ const Product = (props) => {
   const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
   const [currentPrice, setCurrentPrice] = useState(props.sizes[0].additionalPrice);
 
-  const getPrice = (a, b) => {
-    return a + b;
-  };
+  const getPrice = (basePrice, currentPrice) => (basePrice + currentPrice);
+  
 
   const totalPrice = useMemo(() => getPrice(props.basePrice, currentPrice), [props.basePrice, currentPrice]
   );
 
-  const cardData ={
+  const cardData = {
     name: props.title,
     price: totalPrice,
     size: currentSize,
