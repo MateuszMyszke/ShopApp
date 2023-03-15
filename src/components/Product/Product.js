@@ -11,7 +11,6 @@ const Product = (props) => {
 
   const getPrice = (basePrice, currentPrice) => (basePrice + currentPrice);
   
-
   const totalPrice = useMemo(() => getPrice(props.basePrice, currentPrice), [props.basePrice, currentPrice]
   );
 
